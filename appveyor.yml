@@ -18,6 +18,7 @@ install:
         throw "There are newer queued builds for this pull request, failing early." }
   - date /T & time /T
   - set OPENSSL_VER=1_1_0i
+  - rmdir C:\OpenSSL-Win64 /S /Q
   - ps: >-
       If ($env:Platform -Match "x86") {
         $env:VCVARS_PLATFORM="x86"
