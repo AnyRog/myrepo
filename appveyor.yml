@@ -35,7 +35,7 @@ install:
       If (!(Test-Path -Path "C:\OpenSSL-${env:OPENSSL_PF}" )) {
         echo "Downloading https://slproweb.com/download/%OPENSSL_PF%OpenSSL-${env:OPENSSL_VER}.exe"
         Start-FileDownload https://slproweb.com/download/${env:OPENSSL_PF}OpenSSL-${env:OPENSSL_VER}.exe -FileName C:\WinOpenSSL.exe
-        Start-Process C:\WinOpenSSL.exe /VERYSILENT /SP- /SUPPRESSMSGBOXES /NORESTART -Wait
+        Start-Process C:\WinOpenSSL.exe -ArgumentList /VERYSILENT /SP- /SUPPRESSMSGBOXES /NORESTART -Wait
         echo "Installed C:\OpenSSL-%OPENSSL_PF%"
       }
   - ps: >-
